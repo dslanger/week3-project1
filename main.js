@@ -2,16 +2,39 @@
 
 // 1. Define a function called "divideByTwo". It should accept one parameter called "number".
 //    The function should divide the number by two and output the answer.
+var divideByTwo = function (number) {
+	console.log(number / 2);
+};
 
 // 2. Define a function called "greeting". It should accept two parameters, which will be names.
 //    The function should output the a greeting to both people.
 
+var greeting = function (name1, name2) {
+	console.log("Hello, " + name1 + " and " + name2 + "!");
+};
+
 // 3. You use Amazon Subscribe & Save to have six cans of cashews automatically sent to you each month, but the price keeps changing.
 //    Write a function that takes the price per unit and calculates the total for you each month.
+var cashewCost = function (price) {
+	console.log(price * 6);
+};
 
 // 4. Write a function that accepts the following array and separates the people into two teams.
 //    No names next to eachother in the array should be on the same team.
-      teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
+var teammates = ["Harold", "Bob", "Sue", "Grady", "Notorious B.I.G.", "JavaCrypt", "Weird guy in the back", "Gary", "Carol", "Hipster Tim", "Janet"]
+var team1 = [];
+var team2 = [];
+var teamsPicker = function (players) {
+	for (var = i; i < players.length; i++) {
+		if (i % 2 === 0) {
+			team1.push(players[i]);
+		} else {
+			team2.push(players[i]);
+		}
+	}
+};
+console.log(team1);
+console.log(team2);
 
 // 5. Define a function called "quarter". It accepts one parameter called "number".
 //    The function will return a value which is one quarter of the number provided.
@@ -25,22 +48,79 @@
 //                  else
 //                      print out a statement saying the number is odd
 
+var quarter = function (number) {
+	return number / 4;
+};
+
+if (quarter(8) % 2 === 0) {
+	console.log("The number is even.");
+} else {
+	console.log("The number is odd.");
+}
+
 // 6. Define functions called "area" and "perimeter". They should both accept two parameters and calculate the area and perimeter of a rectangle.
+
+var area = function (base, height) {
+	return base * height / 2;
+};
+var perimeter = function (base, height) {
+	return base + (Math.sqrt(Math.pow(base / 2, 2) + Math.pow(height, 2))) * 2;
+};
 
 // 7. Write a function called "sleepings", it should accept one parameter, an integer called "hours".
 //    Write a conditional statement inside of the function. If the number of hours is more than 8, print a statement to the console about getting enough rest.
 //    If the number of hours is less than 8, print a statement recommending the user get more shut eye.
+var sleepings = function (hours) {
+	if (hours > 8) {
+		console.log("Wow. You officially can't blame it on lack of sleep.");
+	} else {
+		console.log("You can blame it on lack of sleep but it's probably a more stable character flaw that took a long time to build and will take a long time to lose. Better make sure you don't get more shut eye so you'll always have an excuse.");
+	}
+};
+
 
 // 8. Prompt a user to enter a six digit number. Write a function that reverses the number.
 //    (Hint, you will have to turn the integer into a string before you can reverse it.)
+var number = prompt("enter a six digit number");
+var backwards = function () {
+	//var string = number.toString;
+	var output = '';
+	for (var i = number.length; i > 0; i--) {
+		output += number.substring(i - 1, i);
+	}
+	return parseInt(output);
+};
+backwards();
 
-// 9. Within the fuction you wrote in #7, write a conditional statement that checks to ensure the user entered a six digit integer.
+// 9. Within the function you wrote in #8, write a conditional statement that checks to ensure the user entered a six digit integer.
 //    If they have not entered a six digit integer, give them a message about being a failure.
+var input = prompt("enter a six digit number");
+var backwards = function () {
+	//var string = input.toString;
+	//if (input.length !== 6 || /^\d+$/.test(input)) {
+	if (input.length !== 6 || isNaN(input)) {
+		alert("You, your answer, and your ancestors are a failure.");
+	} else {
+		var output = '';
+		for (var i = input.length; i > 0; i--) {
+			output += input.substring(i - 1, i);
+		}
+	return parseInt(output);
+	}
+	
+};
+backwards();
+
 
 // 10. You've finally gotten around to counting the change in your piggy bank. Write a function that accepts four parameters (quarters, dimes, nickels, and pennies).
 //     The function should take each number of coins and multiply it times each coin's value.
 //     Finally, it should return the total amount of change you have in the following format: "$32.77"
-
+ var moneyInTheBank = function (quarters, dimes, nickels, pennies) {
+ 	var value = quarters * 0.25 + dimes * 0.10 + nickels * 0.05 + pennies * 0.01;
+ 	value.toFixed(2);
+ 	console.log("$" + value);
+ };
+ moneyInTheBank(3, 1, 2, 5);
 // 11. Develop a function that determines a person's age by prompting them for their birth year.
 
 // 12. Write a function that takes a year and reports whether or not it is a leap year.
